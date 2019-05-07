@@ -5,6 +5,5 @@ var root = document.getElementById("root");
 var img = new Image();
 img.src = bg;
 img.classList.add('avatar');
-
 root.append(img);
 
