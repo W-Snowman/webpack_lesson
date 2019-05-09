@@ -3,7 +3,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 //plugin 可以在webpack运行到某个时刻的时候，帮你做一些事情
 module.exports = {
-    entry: "./src/index.js",
+    entry: {
+        main: './src/index.js',
+        sub: './src/index.js'
+    },
     module: {
         rules: [{
             test: /\.(jpg|png|gif)$/,
@@ -45,8 +48,9 @@ module.exports = {
         new CleanWebpackPlugin(),   //2.0之后的版本不用添加参数了
     ],
     output: {
+        publicPath: "https: //cdn.com.cn",  //配置一个公用的cdn地址，index.html入口引用的js文件都会加上这个地址
         path: path.resolve(__dirname,"dist"),
-        filename: 'bundle.js'
+        filename: '[name].bundle.js'
     }
 }
 
