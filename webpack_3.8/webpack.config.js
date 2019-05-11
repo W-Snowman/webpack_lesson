@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const webpack = require("webpack");
 //plugin 可以在webpack运行到某个时刻的时候，帮你做一些事情
 module.exports = {
     mode: 'development',
@@ -10,7 +11,9 @@ module.exports = {
     devServer: {
         contentBase: './dist',
         open: true,
-        port: 3030
+        port: 3030,
+        hot: true,
+        hotOnly: true
     },
     entry: {
         main: './src/index.js'
@@ -37,6 +40,13 @@ module.exports = {
                 'postcss-loader'
             ]
         },{
+            test: /\.css$/,
+            use: [
+                'style-loader',
+                'css-loader',
+                'postcss-loader'
+            ]
+        },{
             test:  /\.(ttf|svg|eot|woff)$/,
             use: [{
                 loader: 'file-loader',
@@ -53,10 +63,10 @@ module.exports = {
             template: 'src/index.html'  //配置模板
         }),
         //在打包之前运行，自动清除之前打包的内容，即打包输出output.path路径下的内容
-        new CleanWebpackPlugin(),   //2.0之后的版本不用添加参数了
+        new CleanWebpackPlugin(),   //2.0之后的版本不用添加参数了,
+        new webpack.HotModuleReplacementPlugin()    //webpack的热更新模块插件
     ],
     output: {
-        publicPath: '/',
         path: path.resolve(__dirname,"dist"),
         filename: '[name].bundle.js'
     }
