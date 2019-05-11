@@ -1,1 +1,1 @@
-console.log("Hello world!!!##dlskl!");
+console.log("Hello world!!");

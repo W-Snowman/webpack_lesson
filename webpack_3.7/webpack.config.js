@@ -56,6 +56,7 @@ module.exports = {
         new CleanWebpackPlugin(),   //2.0之后的版本不用添加参数了
     ],
     output: {
+        publicPath: '/',
         path: path.resolve(__dirname,"dist"),
         filename: '[name].bundle.js'
     }
