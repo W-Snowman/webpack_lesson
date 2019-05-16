@@ -1,0 +1,27 @@
+{
+    //打包业务代码
+    /*对es6语法进行转换,且仅对代码中使用到的方法进行转换
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "useBuiltIns": 'usage'
+            }
+        ]
+    ]
+    */
+    
+    //打包组件库代码，避免污染全局变量
+    "plugins": [
+        [
+            "@babel/plugin-transform-runtime",
+            {
+                "absoluteRuntime": false,
+                "corejs": 2,
+                "helpers": true,
+                "regenerator": true,
+                "useESModules": false
+            }
+        ]
+    ]
+}

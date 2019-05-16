@@ -23,11 +23,6 @@ module.exports = {
             test: /\.js$/,
             exclude: /node_modules/,
             loader: 'babel-loader',//为webpack和js之间搭建桥梁
-            options: {
-                presets: [["@babel/preset-env",{
-                    useBuiltIns: 'usage'
-                }]]//对es6语法进行转换
-            }
         },{
             test: /\.(jpg|png|gif)$/,
             use: [{
