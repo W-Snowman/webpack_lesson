@@ -1,0 +1,2 @@
+lazy loading懒加载
+使用import可以实现代码按需加载，提升用户体验。
