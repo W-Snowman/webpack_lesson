@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],[,function(n,e,i){"use strict";i.r(e),e.default=function(){var n=document.createElement("div");n.innerHTML="Wei Jingguo",document.body.appendChild(n)}}]]);
+//# sourceMappingURL=1.bundle.js.map
