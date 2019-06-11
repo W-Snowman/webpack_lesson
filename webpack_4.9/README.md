@@ -1,9 +1,11 @@
 1. output配置：
-  output: {
-    path: path.resolve(__dirname,"../dist"),//dist文件夹放在根目录下
-    filename: '[name].bundle.js',   //入口文件命名
-    chunkFilename: '[name].chunk.js'    //其他js文件命名
-  }
+    ```
+    output: {
+      path: path.resolve(__dirname,"../dist"),//dist文件夹放在根目录下
+      filename: '[name].bundle.js',   //入口文件命名
+      chunkFilename: '[name].chunk.js'    //其他js文件命名
+    }
+    ```
 
 2. css代码分割
 
