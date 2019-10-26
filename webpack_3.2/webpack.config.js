@@ -8,7 +8,7 @@ module.exports = {
             use: [{
                 loader: 'url-loader',
                 options: {
-                    name: '[name].[ext]',
+                    name: '[name].[hash].[ext]',
                     outputPath: 'images', 
                     limit: 20480
                 }
