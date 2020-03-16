@@ -24,7 +24,7 @@ module.exports = {
                     }
                 },
                 'sass-loader',
-                'postcss-loader'
+                'postcss-loader'    //css3样式添加浏览器前缀
             ]
         }]
     },
